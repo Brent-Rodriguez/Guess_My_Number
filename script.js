@@ -25,6 +25,6 @@ checkBtn.addEventListener('click', () => {
   } else if(inputValue > ranNumber){
     message.textContent = '😫 Guess is too high'
   } else if(inputValue < ranNumber){
-    message.textContent = 'Guess is too Low'
+    message.textContent = '😫 Guess is too Low'
   }
 })
