@@ -30,12 +30,23 @@ checkBtn.addEventListener('click', () => {
   } else if(inputValue === ranNumber){
     message.textContent = '🏆 Congrats Number Matched'
   } else if(inputValue > ranNumber){
-    message.textContent = '😫 Guess is too high'
-    updateScore--
-    score.textContent = updateScore
+    if(updateScore > 1){
+      message.textContent = '😫 Guess too high'
+      updateScore--
+      score.textContent = updateScore
+    } else {
+      message.textContent = 'You lost'
+      score.textContent = 0
+    }
   } else if(inputValue < ranNumber){
-    message.textContent = '😫 Guess is too Low'
-    updateScore--
-    score.textContent = updateScore
+    if(updateScore > 1){
+      message.textContent = '😫 Guess too Low'
+      updateScore--
+      score.textContent = updateScore
+    } else {
+      message.textContent = 'You Lost'
+      score.textContent = 0
+    }
+    
   }
 })
