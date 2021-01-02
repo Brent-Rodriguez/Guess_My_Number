@@ -17,7 +17,7 @@ const ranNumber = Math.trunc(Math.random() * 20) +1
 
 
 let updateScore = 20
-number.textContent = ranNumber
+//number.textContent = ranNumber
 
 
 // CHECK BUTTON
