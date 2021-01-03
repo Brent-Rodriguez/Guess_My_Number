@@ -44,7 +44,6 @@ checkBtn.addEventListener('click', () => {
       message.textContent = '😫 Guess too Low'
       updateScore--
       score.textContent = updateScore
-     
     } else {
       message.textContent = 'You Lost'
       score.textContent = 0
