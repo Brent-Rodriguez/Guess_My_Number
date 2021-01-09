@@ -12,15 +12,15 @@ const checkBtn = document.querySelector('.check')
 const resetBtn = document.querySelector('.again')
 
 //Generates Random Number
-const ranNumber = Math.trunc(Math.random() * 20) +1
+let ranNumber = Math.trunc(Math.random() * 20) +1
 
 let updateScore = 20
 
 
 
-// Eventlisteners 
+// Eventlistener 
 checkBtn.addEventListener('click', () => {
-  const inputValue = Number(guess.value)
+  let inputValue = Number(guess.value)
 
 
   //Checks for no input
@@ -58,4 +58,16 @@ checkBtn.addEventListener('click', () => {
     }
     
   }
+})
+
+resetBtn.addEventListener('click', () => {
+  score = 20
+  ranNumber = Math.trunc(Math.random() * 20) +1
+  document.querySelector('.message').textContent = 'Start Guessing... '
+  document.querySelector('.score').textContent = score
+  document.querySelector('.number').textContent = '?'
+  document.querySelector('.guess').value = ''
+  document.querySelector('body').style.backgroundColor = '#222'
+  document.querySelector('.number').style.width = '15rem'
+
 })
