@@ -24,11 +24,18 @@ let updateScore = 20
 checkBtn.addEventListener('click', () => {
   const inputValue = Number(guess.value)
 
-  if(!inputValue){ // CHECKS FOR NO INPUT
-    message.textContent = '🛑 Please add a Number!'
+
+  //Checks for no input
+  if(!inputValue){ 
+    message.textContent = '🛑 Add a Number!'
+
+    //When a Player Wins
   } else if(inputValue === ranNumber){
-    message.textContent = '🏆 Congrats Number Matched'
+    message.textContent = '🏆 Correct Number'
     bgColor.style.backgroundColor = '#60b347'
+
+
+    // When guess is to high
   } else if(inputValue > ranNumber){
     if(updateScore > 1){
       message.textContent = '😫 Guess too high'
