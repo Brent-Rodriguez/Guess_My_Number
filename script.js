@@ -4,23 +4,21 @@ const bgColor = document.querySelector('body')
 const message = document.querySelector('.message')
 const number = document.querySelector('.number')
 const guess = document.querySelector('.guess')
-
-// MUTABLES
+//Mutable
 let score = document.querySelector('.score')
-
-// CHECK BUTTON
+// Check Button
 const checkBtn = document.querySelector('.check')
+//Reset Button
+const resetBtn = document.querySelector('.again')
 
-
-// GENERATES RANDOM NUMBER
+//Generates Random Number
 const ranNumber = Math.trunc(Math.random() * 20) +1
 
-
 let updateScore = 20
-//number.textContent = ranNumber
 
 
-// CHECK BUTTON
+
+// Eventlisteners 
 checkBtn.addEventListener('click', () => {
   const inputValue = Number(guess.value)
 
@@ -32,7 +30,9 @@ checkBtn.addEventListener('click', () => {
     //When a Player Wins
   } else if(inputValue === ranNumber){
     message.textContent = '🏆 Correct Number'
+    number.textContent = ranNumber
     bgColor.style.backgroundColor = '#60b347'
+    number.style.width = '30rem'
 
 
     // When guess is to high
