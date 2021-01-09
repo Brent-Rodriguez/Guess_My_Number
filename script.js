@@ -4,8 +4,10 @@ const bgColor = document.querySelector('body')
 const message = document.querySelector('.message')
 const number = document.querySelector('.number')
 const guess = document.querySelector('.guess')
+
 //Mutable
 let score = document.querySelector('.score')
+let highScore = document.querySelector('.highscore')
 // Check Button
 const checkBtn = document.querySelector('.check')
 //Reset Button
@@ -15,13 +17,13 @@ const resetBtn = document.querySelector('.again')
 let ranNumber = Math.trunc(Math.random() * 20) +1
 
 let updateScore = 20
+let updateHighScore = 0
 
 
 
 // Eventlistener 
 checkBtn.addEventListener('click', () => {
   let inputValue = Number(guess.value)
-
 
   //Checks for no input
   if(!inputValue){ 
@@ -34,6 +36,10 @@ checkBtn.addEventListener('click', () => {
     bgColor.style.backgroundColor = '#60b347'
     number.style.width = '30rem'
 
+    if(updateScore > updateHighScore) {
+      updateHighScore = updateScore
+      highScore.textContent = updateHighScore
+    }
 
     // When guess is to high
   } else if(inputValue > ranNumber){
